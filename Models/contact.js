@@ -66,31 +66,19 @@ Contact.saveNew = function(newData){
 
    });
 }
-/*
 
-Contact.deletecontact = function(deleteData){
-	return new Promise(function(resolve,reject){
-		 const connection = mongoose.connect('mongodb://127.0.0.1:27017/myDB');
-  console.log(connection);
-	
-	var saveContact =contactModel({
-		name:`${newData.name}`,
-		phoneNo: `${newData.phoneNo}`
-	});
-		
-		 connection.query(query,function(err,result,fields){
-		if(err){
-			console.log(err);
-			console.log('ERR: fetching data from database');
-			reject();
-		}
-		else{
-			resolve(result);
-		}
-	});
-
-	});
+Contact.deleteContact = function(Contact){
+	return new Promise(function ( resolve, reject){
+		const connection = mongoose.connect('mongodb://127.0.0.1:27017/myDB');
+		contactModel.findOneAndRemove({name:`${Contact.name}`},function(err){
+			if(err){
+				console.log('ERR:Deleting data');
+			}
+			else{
+				resolve(contact);
+			}
+		});	
+});
 }
-*/
 
 module.exports = Contact;

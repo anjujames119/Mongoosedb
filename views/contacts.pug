@@ -6,9 +6,10 @@ block content
 		.row
 			.col-6
 				.card.blue-grey.lighten-2.container
-				
-       
 					.card-content.white-text.z-depth-5
-					
-						p Name :#{val.name}
-						p PhoneNo :#{val.phoneNo}
+						nav
+							ul
+								li
+									a(href='delete?name='+val.name) Delete
+								p Name :#{val.name}
+								p PhoneNo :#{val.phoneNo}

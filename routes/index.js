@@ -28,4 +28,13 @@ router.get('/getAllContacts', function(req, res, next) {
 });
 
 
+router.get('/delete',function(req,res,next){
+    Contacts.deleteContact(req.query)
+   .then(function(){
+  	res.redirect('/getAllContacts');
+  })	
+  .catch(console.log('ERR:deleting data'));
+});
+
+
 module.exports = router;
