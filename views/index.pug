@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  form(action='saveData' method='get')
+   .row
+     .input-field.col.s6
+      label(for='name') Name
+      input#name.validate(type='text', name='name')
+   .row   
+     .input-field.col.s6
+      label(for='name') Phone No :
+      input#phone_No.validate(type='text', name='phoneNo')   
+   .row
+      button.btn(type='submit') Save
